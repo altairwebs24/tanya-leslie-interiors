@@ -28,3 +28,5 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+- Keep each studio page as a distinct TanStack route and load public studio content and media from the shared public storage bucket, so pages remain independently navigable while owner-editable information stays centralized.

@@ -1,0 +1,4 @@
+- [ ] Create a public Cloud storage bucket and make its studio media and content publicly readable.
+- [ ] Build five responsive, brand-matched pages using the supplied images.
+- [ ] Add a booking form that opens WhatsApp with a prepared message for the supplied number.
+- [ ] Ensure Vite configuration has an initialized plugins array and verify preview, tests, and build logs.
