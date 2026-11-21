@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { Link, useLocation } from "@tanstack/react-router";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 
@@ -13,7 +13,7 @@ const navigation = [
   { label: "Studio", to: "/studio" },
 ] as const;
 
-export function StudioSiteLayout({ children }: { children: React.ReactNode }) {
+export function StudioSiteLayout({ children }: { children: ReactNode }) {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
@@ -160,7 +160,13 @@ export function SectionHeading({
   );
 }
 
-export function TextArrowLink({ to, children }: { to: "/services" | "/projects" | "/studio" | "/book"; children: React.ReactNode }) {
+export function TextArrowLink({
+  to,
+  children,
+}: {
+  to: "/services" | "/projects" | "/studio" | "/book";
+  children: ReactNode;
+}) {
   return (
     <Link to={to} className="text-arrow-link">
       {children} <ArrowUpRight aria-hidden="true" />
