@@ -123,14 +123,6 @@ function SiteFooter() {
           </a>
         </div>
       </div>
-      <div className="site-container footer-brand-art">
-        <img
-          src={publicStorageUrl(content.footerImage)}
-          alt={`${content.brandName} — Interior Design`}
-          className="footer-brand-image"
-          loading="lazy"
-        />
-      </div>
       <div className="site-container footer-bottom">
         <span>© {currentYear} {content.brandName}</span>
         <span>Midrand, South Africa</span>

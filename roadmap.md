@@ -4,3 +4,4 @@
 - [x] Ensure Vite configuration has an initialized plugins array and verify preview, tests, and build logs.
 - [x] Use “KR8 ENTITIES” as the sole public business name, with the new logo in the header and new image in the footer.
 - [x] Show the latest KR8 logo in the header, with the site content re-read after bucket edits.
+- [x] Switch the header logo to the new cobalt-blue KR8 ENTITIES mark, update every green accent to cobalt blue, and remove the footer logo.

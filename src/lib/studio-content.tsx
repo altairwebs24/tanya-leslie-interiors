@@ -4,7 +4,7 @@ export const PUBLIC_STUDIO_BUCKET = "tanya-leslie-interiors";
 
 // Bump this when studio-content.json changes in the bucket, so the site
 // re-reads the file instead of a copy held by the content delivery cache.
-export const STUDIO_CONTENT_VERSION = "2026-11-22-1";
+export const STUDIO_CONTENT_VERSION = "2026-11-22-2";
 
 export interface StudioService {
   title: string;
@@ -26,7 +26,6 @@ export interface StudioHour {
 export interface StudioContent {
   brandName: string;
   logo: string;
-  footerImage: string;
   heroImage: string;
   heroEyebrow: string;
   heroTitle: string;
@@ -41,8 +40,7 @@ export interface StudioContent {
 
 export const defaultStudioContent: StudioContent = {
   brandName: "KR8 ENTITIES",
-  logo: "images/kr8-logo-header.png",
-  footerImage: "images/kr8-footer.jpg",
+  logo: "images/kr8-logo-cobalt.png",
   heroImage: "images/hero-living-room.jpg",
   heroEyebrow: "KR8 ENTITIES · MIDRAND",
   heroTitle: "A home, made beautifully yours.",
