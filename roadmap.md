@@ -3,3 +3,4 @@
 - [x] Add a booking form that opens WhatsApp with a prepared message for the supplied number.
 - [x] Ensure Vite configuration has an initialized plugins array and verify preview, tests, and build logs.
 - [x] Use “KR8 ENTITIES” as the sole public business name, with the new logo in the header and new image in the footer.
+- [x] Show the latest KR8 logo in the header, with the site content re-read after bucket edits.

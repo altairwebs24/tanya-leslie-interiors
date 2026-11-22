@@ -2,6 +2,10 @@ import { createContext, useContext, useEffect, useState, type ReactNode } from "
 
 export const PUBLIC_STUDIO_BUCKET = "tanya-leslie-interiors";
 
+// Bump this when studio-content.json changes in the bucket, so the site
+// re-reads the file instead of a copy held by the content delivery cache.
+export const STUDIO_CONTENT_VERSION = "2026-11-22-1";
+
 export interface StudioService {
   title: string;
   description: string;
@@ -37,7 +41,7 @@ export interface StudioContent {
 
 export const defaultStudioContent: StudioContent = {
   brandName: "KR8 ENTITIES",
-  logo: "images/kr8-logo-header.jpg",
+  logo: "images/kr8-logo-header.png",
   footerImage: "images/kr8-footer.jpg",
   heroImage: "images/hero-living-room.jpg",
   heroEyebrow: "KR8 ENTITIES · MIDRAND",
@@ -151,7 +155,7 @@ export function StudioContentProvider({ children }: { children: ReactNode }) {
     const contentUrl = publicStorageUrl("studio-content.json");
     if (!contentUrl) return () => controller.abort();
 
-    void fetch(contentUrl, { signal: controller.signal })
+    void fetch(`${contentUrl}?v=${STUDIO_CONTENT_VERSION}`, { signal: controller.signal })
       .then((response) => {
         if (!response.ok) throw new Error("Studio content is unavailable");
         return response.json() as Promise<StudioContent>;
