@@ -11,12 +11,12 @@ const projectImage = publicStorageUrl(
 export const Route = createFileRoute("/projects")({
   head: () => ({
     meta: [
-      { title: "Projects | Tanya & Leslie Interiors" },
+      { title: "Projects | KR8 ENTITIES" },
       {
         name: "description",
         content: "Explore custom wardrobes, media walls, dressing spaces, bars and window finishes.",
       },
-      { property: "og:title", content: "Projects | Tanya & Leslie Interiors" },
+      { property: "og:title", content: "Projects | KR8 ENTITIES" },
       {
         property: "og:description",
         content: "Made-to-measure interiors, shown in the details.",

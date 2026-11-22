@@ -22,6 +22,7 @@ export interface StudioHour {
 export interface StudioContent {
   brandName: string;
   logo: string;
+  footerImage: string;
   heroImage: string;
   heroEyebrow: string;
   heroTitle: string;
@@ -35,8 +36,9 @@ export interface StudioContent {
 }
 
 export const defaultStudioContent: StudioContent = {
-  brandName: "Tanya & Leslie Interiors",
-  logo: "images/studio-logo.jpg",
+  brandName: "KR8 ENTITIES",
+  logo: "images/kr8-logo-header.jpg",
+  footerImage: "images/kr8-footer.jpg",
   heroImage: "images/hero-living-room.jpg",
   heroEyebrow: "KR8 ENTITIES · MIDRAND",
   heroTitle: "A home, made beautifully yours.",

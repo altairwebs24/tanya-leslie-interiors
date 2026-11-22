@@ -10,12 +10,12 @@ const serviceImage = publicStorageUrl(defaultStudioContent.heroImage);
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Interior Services | Tanya & Leslie Interiors" },
+      { title: "Interior Services | KR8 ENTITIES" },
       {
         name: "description",
         content: "Built-in wardrobes, kitchens, living rooms, home bars and finishing touches in Midrand.",
       },
-      { property: "og:title", content: "Interior Services | Tanya & Leslie Interiors" },
+      { property: "og:title", content: "Interior Services | KR8 ENTITIES" },
       {
         property: "og:description",
         content: "Made-to-measure spaces for the everyday moments at home.",

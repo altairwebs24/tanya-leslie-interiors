@@ -33,10 +33,6 @@ function SiteHeader() {
       <div className="site-container header-inner">
         <Link to="/" className="brand-mark" aria-label={`${content.brandName} home`}>
           <img className="brand-logo" src={publicStorageUrl(content.logo)} alt="" />
-          <span className="brand-copy">
-            <span>{content.brandName}</span>
-            <small>INTERIOR STUDIO · MIDRAND</small>
-          </span>
         </Link>
 
         <nav className="desktop-nav" aria-label="Main navigation">
@@ -105,7 +101,6 @@ function SiteFooter() {
     <footer className="site-footer">
       <div className="site-container footer-main">
         <div className="footer-brand-block">
-          <img src={publicStorageUrl(content.logo)} alt="" className="footer-logo" />
           <p className="footer-brand-name">{content.brandName}</p>
           <p className="footer-tagline">Thoughtfully made for the way you live.</p>
         </div>
@@ -120,13 +115,21 @@ function SiteFooter() {
           <p className="footer-label">Visit & enquire</p>
           <p>{content.location}</p>
           <a
-            href={buildWhatsAppUrl("Hello Tanya & Leslie Interiors, I would like to enquire.", content.whatsappNumber)}
+            href={buildWhatsAppUrl(`Hello ${content.brandName}, I would like to enquire.`, content.whatsappNumber)}
             target="_blank"
             rel="noreferrer"
           >
             WhatsApp <ArrowUpRight aria-hidden="true" />
           </a>
         </div>
+      </div>
+      <div className="site-container footer-brand-art">
+        <img
+          src={publicStorageUrl(content.footerImage)}
+          alt={`${content.brandName} — Interior Design`}
+          className="footer-brand-image"
+          loading="lazy"
+        />
       </div>
       <div className="site-container footer-bottom">
         <span>© {currentYear} {content.brandName}</span>

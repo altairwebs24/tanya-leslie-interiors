@@ -12,12 +12,12 @@ const studioImage = publicStorageUrl(
 export const Route = createFileRoute("/studio")({
   head: () => ({
     meta: [
-      { title: "Our Studio | Tanya & Leslie Interiors" },
+      { title: "Our Studio | KR8 ENTITIES" },
       {
         name: "description",
         content: "Meet the Midrand interior studio creating thoughtful, made-to-measure spaces.",
       },
-      { property: "og:title", content: "Our Studio | Tanya & Leslie Interiors" },
+      { property: "og:title", content: "Our Studio | KR8 ENTITIES" },
       {
         property: "og:description",
         content: "A personal approach to considered interiors in Midrand.",
@@ -40,7 +40,7 @@ function StudioPage() {
         <section className="studio-story site-container">
           <div className="studio-story-copy">
             <SectionHeading
-              eyebrow="Tanya & Leslie Interiors"
+              eyebrow="KR8 ENTITIES"
               title="Made for the way"
               accent="you live."
               description={content.studioIntro}

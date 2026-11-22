@@ -80,13 +80,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Tanya & Leslie Interiors | Bespoke interiors in Midrand" },
+      { title: "KR8 ENTITIES | Bespoke interiors in Midrand" },
       {
         name: "description",
         content: "Made-to-measure interiors, wardrobes, kitchens and living spaces in Midrand.",
       },
-      { name: "author", content: "Tanya & Leslie Interiors" },
-      { property: "og:title", content: "Tanya & Leslie Interiors | Bespoke interiors in Midrand" },
+      { name: "author", content: "KR8 ENTITIES" },
+      { property: "og:title", content: "KR8 ENTITIES | Bespoke interiors in Midrand" },
       {
         property: "og:description",
         content: "Made-to-measure interiors, wardrobes, kitchens and living spaces in Midrand.",

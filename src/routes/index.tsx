@@ -15,12 +15,12 @@ const homeImage = publicStorageUrl(defaultStudioContent.heroImage);
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Tanya & Leslie Interiors | A home, made beautifully yours" },
+      { title: "KR8 ENTITIES | A home, made beautifully yours" },
       {
         name: "description",
         content: "Bespoke wardrobes, kitchens and living spaces, thoughtfully made in Midrand.",
       },
-      { property: "og:title", content: "Tanya & Leslie Interiors | A home, made beautifully yours" },
+      { property: "og:title", content: "KR8 ENTITIES | A home, made beautifully yours" },
       {
         property: "og:description",
         content: "Bespoke wardrobes, kitchens and living spaces, thoughtfully made in Midrand.",

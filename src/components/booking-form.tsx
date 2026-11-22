@@ -105,7 +105,7 @@ export function BookingForm() {
         <Button type="submit" className="site-button">
           Continue on WhatsApp <ArrowUpRight aria-hidden="true" />
         </Button>
-        <p>Your details will be added to a message for Tanya & Leslie.</p>
+        <p>Your details will be added to a message for {content.brandName}.</p>
       </div>
     </form>
   );

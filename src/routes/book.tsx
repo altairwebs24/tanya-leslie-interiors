@@ -10,12 +10,12 @@ const bookingImage = publicStorageUrl(defaultStudioContent.heroImage);
 export const Route = createFileRoute("/book")({
   head: () => ({
     meta: [
-      { title: "Book a Consultation | Tanya & Leslie Interiors" },
+      { title: "Book a Consultation | KR8 ENTITIES" },
       {
         name: "description",
-        content: "Tell Tanya & Leslie about your room and continue your consultation request on WhatsApp.",
+        content: "Tell KR8 ENTITIES about your room and continue your consultation request on WhatsApp.",
       },
-      { property: "og:title", content: "Book a Consultation | Tanya & Leslie Interiors" },
+      { property: "og:title", content: "Book a Consultation | KR8 ENTITIES" },
       {
         property: "og:description",
         content: "Share a few details about your project and start a conversation on WhatsApp.",

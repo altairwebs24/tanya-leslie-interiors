@@ -188,28 +188,10 @@
 }
 
 .brand-logo {
-  width: 66px;
-  height: 60px;
+  width: 168px;
+  height: 72px;
   flex: 0 0 auto;
   object-fit: contain;
-}
-
-.brand-copy {
-  display: grid;
-  gap: 2px;
-  color: var(--ink);
-  font-family: var(--font-display);
-  font-size: 19px;
-  font-weight: 600;
-  line-height: 1;
-}
-
-.brand-copy small {
-  color: var(--muted-foreground);
-  font-family: var(--font-body);
-  font-size: 9px;
-  font-weight: 600;
-  line-height: 1.4;
 }
 
 .desktop-nav,
@@ -986,11 +968,16 @@
   padding-block: 58px 48px;
 }
 
-.footer-logo {
-  width: 76px;
-  height: 68px;
+.footer-brand-art {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 18px;
+}
+
+.footer-brand-image {
+  width: min(100%, 440px);
+  aspect-ratio: 16 / 9;
   object-fit: contain;
-  background: var(--paper);
 }
 
 .footer-brand-name {
@@ -1097,20 +1084,8 @@
   }
 
   .brand-logo {
-    width: 54px;
-    height: 50px;
-  }
-
-  .brand-mark {
-    gap: 8px;
-  }
-
-  .brand-copy {
-    font-size: 17px;
-  }
-
-  .brand-copy small {
-    font-size: 8px;
+    width: 142px;
+    height: 58px;
   }
 
   .home-hero {
@@ -1355,6 +1330,14 @@
   .footer-contact {
     grid-column: 1 / -1;
   }
+
+  .footer-brand-art {
+    justify-content: flex-start;
+  }
+
+  .footer-brand-image {
+    width: min(100%, 360px);
+  }
 }
 
 @media (max-width: 480px) {
@@ -1362,18 +1345,9 @@
     width: min(100% - 32px, 420px);
   }
 
-  .brand-copy {
-    max-width: 135px;
-    font-size: 16px;
-  }
-
-  .brand-copy > span {
-    white-space: nowrap;
-  }
-
   .brand-logo {
-    width: 47px;
-    height: 45px;
+    width: 120px;
+    height: 50px;
   }
 
   .home-hero {
