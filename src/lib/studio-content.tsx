@@ -135,12 +135,35 @@ export const defaultStudioContent: StudioContent = {
   ],
 };
 
-export function publicStorageUrl(path: string): string {
+export function publicStorageUrl(path: string | null | undefined): string {
+  if (!path || typeof path !== "string") return "";
   const storageOrigin = import.meta.env["VITE_SUPABASE_URL"]?.replace(/\/+$/, "");
   if (!storageOrigin) return "";
 
   const encodedPath = path.split("/").map(encodeURIComponent).join("/");
   return `${storageOrigin}/storage/v1/object/public/${PUBLIC_STUDIO_BUCKET}/${encodedPath}`;
+}
+
+export function mergeStudioContent(remote: Partial<StudioContent> | null | undefined): StudioContent {
+  if (!remote || typeof remote !== "object") return defaultStudioContent;
+
+  const pickString = (value: unknown, fallback: string) =>
+    typeof value === "string" && value.trim().length > 0 ? value : fallback;
+
+  return {
+    brandName: pickString(remote.brandName, defaultStudioContent.brandName),
+    logo: pickString(remote.logo, defaultStudioContent.logo),
+    heroImage: pickString(remote.heroImage, defaultStudioContent.heroImage),
+    heroEyebrow: pickString(remote.heroEyebrow, defaultStudioContent.heroEyebrow),
+    heroTitle: pickString(remote.heroTitle, defaultStudioContent.heroTitle),
+    heroDescription: pickString(remote.heroDescription, defaultStudioContent.heroDescription),
+    studioIntro: pickString(remote.studioIntro, defaultStudioContent.studioIntro),
+    location: pickString(remote.location, defaultStudioContent.location),
+    whatsappNumber: pickString(remote.whatsappNumber, defaultStudioContent.whatsappNumber),
+    services: Array.isArray(remote.services) ? remote.services : defaultStudioContent.services,
+    projects: Array.isArray(remote.projects) ? remote.projects : defaultStudioContent.projects,
+    hours: Array.isArray(remote.hours) ? remote.hours : defaultStudioContent.hours,
+  };
 }
 
 const StudioContentContext = createContext<StudioContent>(defaultStudioContent);
@@ -156,9 +179,9 @@ export function StudioContentProvider({ children }: { children: ReactNode }) {
     void fetch(`${contentUrl}?v=${STUDIO_CONTENT_VERSION}`, { signal: controller.signal })
       .then((response) => {
         if (!response.ok) throw new Error("Studio content is unavailable");
-        return response.json() as Promise<StudioContent>;
+        return response.json() as Promise<Partial<StudioContent>>;
       })
-      .then((remoteContent) => setContent(remoteContent))
+      .then((remoteContent) => setContent(mergeStudioContent(remoteContent)))
       .catch(() => undefined);
 
     return () => controller.abort();
