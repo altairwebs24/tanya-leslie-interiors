@@ -100,32 +100,6 @@ function HomePage() {
           </div>
         </section>
 
-        <section className="content-section site-container home-showcase">
-          <div className="home-showcase-grid">
-            <div className="home-showcase-copy">
-              <SectionHeading
-                eyebrow="In motion"
-                title="See the craft"
-                accent="come alive."
-                description="A closer look at the details, finishes and fittings that make each space feel considered."
-              />
-              <TextArrowLink to="/projects">Browse the projects</TextArrowLink>
-            </div>
-            <div className="home-showcase-video-wrap">
-              <video
-                className="home-showcase-video"
-                src={publicStorageUrl(content.showcaseVideo)}
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                aria-label="A short film of our interior work"
-              />
-            </div>
-          </div>
-        </section>
-
         <section className="content-section site-container featured-projects">
           <div className="section-heading-row">
             <SectionHeading
@@ -137,6 +111,39 @@ function HomePage() {
             <TextArrowLink to="/projects">View all projects</TextArrowLink>
           </div>
           <ProjectGallery limit={3} />
+        </section>
+
+        <section className="home-showcase">
+          <div className="home-showcase-video-wrap">
+            <video
+              className="home-showcase-video"
+              src={publicStorageUrl(content.showcaseVideo)}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              aria-label="A short film of our interior work"
+            />
+            <div className="home-showcase-overlay" aria-hidden="true" />
+            <div className="site-container home-showcase-overlay-content">
+              <p className="eyebrow eyebrow-light">In motion</p>
+              <h2>
+                See the craft <span className="script-accent">come alive.</span>
+              </h2>
+              <p className="home-showcase-overlay-description">
+                A closer look at the details, finishes and fittings that make each space feel
+                considered.
+              </p>
+            </div>
+          </div>
+          <div className="site-container home-showcase-below">
+            <p>
+              Every project is measured, made and fitted by hand — from the first sketch to the
+              final handle.
+            </p>
+            <TextArrowLink to="/projects">Browse the projects</TextArrowLink>
+          </div>
         </section>
 
         <section className="home-cta-band">
