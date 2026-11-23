@@ -286,14 +286,65 @@
 }
 
 .home-hero {
-  padding-top: 58px;
+  position: relative;
+  display: flex;
+  min-height: calc(100svh - 89px);
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--cobalt-deep);
 }
 
-.home-hero-copy {
+.home-hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.home-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--ink) 58%, transparent) 0%,
+    color-mix(in oklab, var(--cobalt-deep) 62%, transparent) 55%,
+    color-mix(in oklab, var(--cobalt-deep) 82%, transparent) 100%
+  );
+}
+
+.home-hero-content {
+  position: relative;
+  z-index: 1;
   display: flex;
+  flex: 1;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  padding-block: 72px 56px;
   text-align: center;
+}
+
+.home-hero .home-eyebrow {
+  color: var(--cobalt-soft);
+}
+
+.home-hero .home-title {
+  color: var(--primary-foreground);
+  text-shadow: 0 2px 26px color-mix(in oklab, var(--ink) 45%, transparent);
+}
+
+.home-hero .script-accent {
+  color: var(--cobalt-soft);
+}
+
+.home-hero .home-description {
+  color: color-mix(in oklab, var(--primary-foreground) 86%, transparent);
+}
+
+.home-hero .home-hero-subtle-link {
+  color: var(--primary-foreground);
 }
 
 .eyebrow {
@@ -365,32 +416,10 @@
   transform: translate(2px, -2px);
 }
 
-.home-hero-image-wrap {
+.home-hero-note {
   position: relative;
-  overflow: hidden;
-  aspect-ratio: 2.08 / 1;
-  margin: 45px 0 0;
-  background: var(--cobalt-soft);
-}
-
-.home-hero-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 54%;
-}
-
-.home-hero-caption {
-  position: absolute;
-  right: 18px;
-  bottom: 18px;
-  left: 18px;
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  color: var(--primary-foreground);
-  font-size: 11px;
-  text-shadow: 0 1px 10px color-mix(in oklab, var(--ink) 60%, transparent);
+  z-index: 1;
+  border-top: 1px solid color-mix(in oklab, var(--primary-foreground) 22%, transparent);
 }
 
 .home-note-row {
@@ -398,15 +427,19 @@
   align-items: center;
   justify-content: space-between;
   gap: 30px;
-  padding-block: 28px 32px;
+  padding-block: 24px 26px;
 }
 
 .home-note-row > p {
   max-width: 710px;
   margin: 0;
-  color: var(--muted-foreground);
+  color: color-mix(in oklab, var(--primary-foreground) 78%, transparent);
   font-size: 14px;
   line-height: 1.8;
+}
+
+.home-note-row .text-arrow-link {
+  color: var(--primary-foreground);
 }
 
 .home-services-band {
@@ -1079,7 +1112,11 @@
   }
 
   .home-hero {
-    padding-top: 44px;
+    min-height: calc(100svh - 75px);
+  }
+
+  .home-hero-content {
+    padding-block: 56px 40px;
   }
 
   .home-title {
@@ -1097,18 +1134,6 @@
   .home-actions {
     gap: 16px;
     margin-top: 20px;
-  }
-
-  .home-hero-image-wrap {
-    aspect-ratio: 4 / 3;
-    margin-top: 30px;
-  }
-
-  .home-hero-caption {
-    right: 12px;
-    bottom: 12px;
-    left: 12px;
-    font-size: 9px;
   }
 
   .home-note-row {
@@ -1333,10 +1358,6 @@
     max-width: 96px;
   }
 
-  .home-hero {
-    padding-top: 38px;
-  }
-
   .home-title {
     max-width: 370px;
     font-size: 43px;
@@ -1360,15 +1381,6 @@
   .home-actions .site-button {
     min-height: 44px;
     padding-inline: 15px;
-  }
-
-  .home-hero-image-wrap {
-    aspect-ratio: 4 / 5;
-    margin-top: 25px;
-  }
-
-  .home-hero-image {
-    object-position: center 50%;
   }
 
   .home-services-inner {

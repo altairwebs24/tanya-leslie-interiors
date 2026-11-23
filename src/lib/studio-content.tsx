@@ -4,7 +4,7 @@ export const PUBLIC_STUDIO_BUCKET = "tanya-leslie-interiors";
 
 // Bump this when studio-content.json changes in the bucket, so the site
 // re-reads the file instead of a copy held by the content delivery cache.
-export const STUDIO_CONTENT_VERSION = "2026-11-22-2";
+export const STUDIO_CONTENT_VERSION = "2026-11-23-1";
 
 export interface StudioService {
   title: string;
@@ -27,6 +27,7 @@ export interface StudioContent {
   brandName: string;
   logo: string;
   heroImage: string;
+  heroVideo: string;
   heroEyebrow: string;
   heroTitle: string;
   heroDescription: string;
@@ -42,6 +43,7 @@ export const defaultStudioContent: StudioContent = {
   brandName: "KR8 ENTITIES",
   logo: "images/kr8-logo-cobalt.png",
   heroImage: "images/hero-living-room.jpg",
+  heroVideo: "videos/hero-video.mp4",
   heroEyebrow: "KR8 ENTITIES · MIDRAND",
   heroTitle: "A home, made beautifully yours.",
   heroDescription:
@@ -154,6 +156,7 @@ export function mergeStudioContent(remote: Partial<StudioContent> | null | undef
     brandName: pickString(remote.brandName, defaultStudioContent.brandName),
     logo: pickString(remote.logo, defaultStudioContent.logo),
     heroImage: pickString(remote.heroImage, defaultStudioContent.heroImage),
+    heroVideo: pickString(remote.heroVideo, defaultStudioContent.heroVideo),
     heroEyebrow: pickString(remote.heroEyebrow, defaultStudioContent.heroEyebrow),
     heroTitle: pickString(remote.heroTitle, defaultStudioContent.heroTitle),
     heroDescription: pickString(remote.heroDescription, defaultStudioContent.heroDescription),

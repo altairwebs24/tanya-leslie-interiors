@@ -43,8 +43,20 @@ function HomePage() {
   return (
     <StudioSiteLayout>
       <main>
-        <section className="home-hero site-container">
-          <div className="home-hero-copy">
+        <section className="home-hero">
+          <video
+            className="home-hero-video"
+            src={publicStorageUrl(content.heroVideo)}
+            poster={publicStorageUrl(content.heroImage)}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            aria-hidden="true"
+          />
+          <div className="home-hero-overlay" aria-hidden="true" />
+          <div className="site-container home-hero-content">
             <p className="eyebrow home-eyebrow">{content.heroEyebrow}</p>
             <h1 className="home-title">
               {titleAccent ? (
@@ -63,26 +75,16 @@ function HomePage() {
                   Start a project <ArrowUpRight aria-hidden="true" />
                 </Link>
               </Button>
-              <Link to="/projects" className="subtle-link">
+              <Link to="/projects" className="subtle-link home-hero-subtle-link">
                 Explore our work <ArrowRight aria-hidden="true" />
               </Link>
             </div>
           </div>
-          <figure className="home-hero-image-wrap">
-            <img
-              className="home-hero-image"
-              src={publicStorageUrl(content.heroImage)}
-              alt="A contemporary living room with a custom media wall and illuminated shelving."
-              fetchPriority="high"
-            />
-            <figcaption className="home-hero-caption">
-              <span>Designed around the way you live</span>
-              <span>01 — Midrand</span>
-            </figcaption>
-          </figure>
-          <div className="home-note-row">
-            <p>{content.studioIntro}</p>
-            <TextArrowLink to="/services">Discover what we do</TextArrowLink>
+          <div className="home-hero-note">
+            <div className="site-container home-note-row">
+              <p>{content.studioIntro}</p>
+              <TextArrowLink to="/services">Discover what we do</TextArrowLink>
+            </div>
           </div>
         </section>
 
